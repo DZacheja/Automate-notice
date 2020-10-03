@@ -15,14 +15,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Private Sub CommandButton1_Click()
-
-End Sub
-
-Private Sub Label3_Click()
-
-End Sub
-
 Private Sub OkButton_Click()
     On Error Resume Next
     StartDate = CDate(Me.TextBox5.text)
@@ -50,17 +42,10 @@ Private Sub OkButton_Click()
     
 End Sub
 
-
-Private Sub TextBox1_Change()
-
-End Sub
-
-Private Sub UserForm_Click()
-
-End Sub
-
 Private Sub UserForm_Initialize()
+'fill the data textbox with current date
 Dim LDate As String
 LDate = Date
 Me.TextBox5.text = LDate
+
 End Sub
