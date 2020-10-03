@@ -1,3 +1,4 @@
+'Inspired from book: "Excel 2016 Power Programming with VBA", John Wiley & Sons
 VERSION 5.00
 Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} StatusBar 
    Caption         =   "Loading"
@@ -37,8 +38,4 @@ Public Sub UpdateProgress(PctDone As Double)
         .lblProgress.Width = PctInt * 2
         .Repaint
     End With
-End Sub
-
-Private Sub UserForm_Click()
-
 End Sub
