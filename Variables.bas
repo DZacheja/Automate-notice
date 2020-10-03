@@ -1,10 +1,13 @@
 Attribute VB_Name = "Variables"
 Option Explicit
+'textboxes from Description UserForm
 Public Text1 As String
 Public Text2 As String
 Public Text3 As String
 Public Text4 As String
 Public StartDate As Date
+
+
 Type LandPlot
     Number As String
     Hour As String
