@@ -16,6 +16,7 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Private Sub ExcelSelect_Click()
+'select exel and fill comboboxes
     Dim ExApp As Excel.Application
     Dim wb As Workbook
     Dim FileName As String 'fileSelected
@@ -37,6 +38,7 @@ Private Sub ExcelSelect_Click()
     End With
     
     If Not FileName = "" Then
+   'fill the label contains excel path
     Set wb = Excel.Workbooks.Open(FileName, , True)
     Me.SelectedFileLabel.Caption = FileName
     Me.SelectedFileLabel.ForeColor = &HFF00&
@@ -65,11 +67,8 @@ Private Sub GENERATE_Click()
     
 End Sub
 
-Private Sub NameBox_Change()
-
-End Sub
-
 Private Sub WordSelect_Click()
+      'select the orginal word witch contains all bookmarks
     Dim wdApp As Word.Application
     Dim selected As Variant
     Dim FileName As String 'fileSelected
@@ -89,6 +88,7 @@ Private Sub WordSelect_Click()
     MsgBox "Nothing selected"
     Exit Sub
     End If
+         'fill the label contains word path
     FileName = FileDg.SelectedItems(1)
     Me.SelectedWordLabel.Caption = FileName
     Me.SelectedWordLabel.ForeColor = &HFF00&
