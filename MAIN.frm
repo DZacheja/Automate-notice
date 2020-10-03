@@ -39,19 +39,21 @@ Private Sub ExcelSelect_Click()
     
     If Not FileName = "" Then
    'fill the label contains excel path
-    Set wb = Excel.Workbooks.Open(FileName, , True)
-    Me.SelectedFileLabel.Caption = FileName
-    Me.SelectedFileLabel.ForeColor = &HFF00&
+      Set wb = Excel.Workbooks.Open(FileName, , True)
+      Me.SelectedFileLabel.Caption = FileName
+      Me.SelectedFileLabel.ForeColor = &HFF00&
     Else
-    MsgBox "Nothing selected!"
-    ExApp.Quit
-    Exit Sub
+      MsgBox "Nothing selected!"
+      ExApp.Quit
+      Exit Sub
     End If
+      
     'fill up ComboBoxe's
     For Each ws In wb.Worksheets
         Me.SheetPeopleDataComboBox.AddItem ws.Name
         Me.SheetLandPlotsComboBox.AddItem ws.Name
     Next ws
+   
     ExApp.Quit
     Set wb = Nothing
     
@@ -62,7 +64,8 @@ Private Sub ExcelSelect_Click()
 End Sub
 
 Private Sub GENERATE_Click()
-    MAIN.Hide
+    
+      MAIN.Hide
     Description.Show
     
 End Sub
@@ -85,18 +88,20 @@ Private Sub WordSelect_Click()
     End With
     
     If FileName = "" Then
-    MsgBox "Nothing selected"
-    Exit Sub
+      MsgBox "Nothing selected"
+      Exit Sub
     End If
          'fill the label contains word path
     FileName = FileDg.SelectedItems(1)
     Me.SelectedWordLabel.Caption = FileName
     Me.SelectedWordLabel.ForeColor = &HFF00&
     Call WordTest.BookmarksTest(CorrectFile)
-    If Not CorrectFile Then
+    
+         If Not CorrectFile Then
         MsgBox "Check bookmarks in word file!"
         Me.SelectedWordLabel.Caption = "Nothing"
     Else
-    Me.SelectedWordLabel.ForeColor = &HFF00&
+         Me.SelectedWordLabel.ForeColor = &HFF00&
     End If
+
 End Sub
